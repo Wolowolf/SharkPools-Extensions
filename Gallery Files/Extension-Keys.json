@@ -168,14 +168,6 @@
       "tags": ["Utility", "Graphics", "Math"],
       "date": "Last Updated: 11/08/2025"
     },
-    "Text-to-Speech-V2": {
-      "desc": "Generate speech using popular Text-to-Speech models",
-      "creator": "SharkPool",
-      "url": "Text-to-Speech-V2.js",
-      "banner": "Text-to-Speech.svg",
-      "tags": ["Sound", "Online", "Category Expansion"],
-      "date": "Last Updated: 08/20/2026"
-    },
     "Pause": {
       "desc": "Pause your Project, Scripts, and Sprites",
       "creator": "SharkPool",
@@ -295,15 +287,6 @@
       "banner": "Time-Calculation.svg",
       "tags": ["Utility", "Math", "Time"],
       "date": "Last Updated: 06/01/2024"
-    },
-    "Timezones": {
-      "desc": "Convert and get the Time in different Timezones",
-      "creator": "Ammunimium",
-      "url": "Timezones.js",
-      "banner": "Timezones.svg",
-      "tags": ["Utility", "Math", "Time"],
-      "status": "",
-      "date": "Released: 01/25/2024"
     },
     "Seeds": {
       "desc": "Generate random seeded numbers, generated terrain, and more",
