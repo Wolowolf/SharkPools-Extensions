@@ -144,14 +144,6 @@
       "tags": ["Utility", "Data Management", "Category Expansion"],
       "date": "Last Updated: 01/14/2026"
     },
-    "Sty-Lists": {
-      "desc": "Customize and Organize List Monitors",
-      "creator": "SharkPool",
-      "url": "Sty-Lists.js",
-      "banner": "Sty-Lists.svg",
-      "tags": ["Utility", "Data Management", "Category Expansion"],
-      "date": "Last Updated: 04/12/2025"
-    },
     "Gamepad-Expanded": {
       "desc": "Expansion of Garbomuffin's Gamepad Extension",
       "creator": "DNin01, Meehdrescher",
@@ -232,14 +224,6 @@
       "tags": ["Sound", "Data Management", "Online"],
       "date": "Last Updated: 07/18/2026"
     },
-    "Google-Spreadsheets": {
-      "desc": "Read and Write Google Spreadsheets",
-      "creator": "SharkPool",
-      "url": "Google-Spreadsheets.js",
-      "banner": "Google-Spreadsheets.svg",
-      "tags": ["Utility", "Data Management", "Online"],
-      "date": "Last Updated: 01/16/2025"
-    },
     "Color-Master": {
       "desc": "Color Utility and Conversion Blocks",
       "creator": "SharkPool",
@@ -272,14 +256,6 @@
       "tags": ["Utility", "Graphics", "Category Expansion", "Dangerous", "Configuration", "Runtime"],
       "date": "Last Updated: 09/12/2026"
     },
-    "Renderer-Control": {
-      "desc": "Control the visuals of Pen, Video Camera, Backdrops, Sprites and more",
-      "creator": "SharkPool",
-      "url": "Renderer-Control.js",
-      "banner": "Renderer-Control.svg",
-      "tags": ["Utility", "Graphics", "Category Expansion", "Dangerous", "Configuration", "Runtime"],
-      "date": "Last Updated: 09/12/2026"
-    },
     "Time-Calculation": {
       "desc": "Blocks for calculating Time differences",
       "creator": "SharkPool",
@@ -287,14 +263,6 @@
       "banner": "Time-Calculation.svg",
       "tags": ["Utility", "Math", "Time"],
       "date": "Last Updated: 06/01/2024"
-    },
-    "Seeds": {
-      "desc": "Generate random seeded numbers, generated terrain, and more",
-      "creator": "SharkPool",
-      "url": "Seeds.js",
-      "banner": "Seeds.svg",
-      "tags": ["Utility", "Math"],
-      "date": "Last Updated: 11/29/2023"
     },
     "Extra-Controls": {
       "desc": "New Advanced Control Blocks",
