@@ -16,15 +16,6 @@
       "tags": ["Utility", "Sound", "Online"],
       "date": "Last Updated: 08/20/2026"
     },
-    "Scratch-Utilities": {
-      "desc": "Blocks for fetching Scratch statistics and assets, inspired by NexusKitten's S-Grab",
-      "creator": "SharkPool",
-      "url": "Scratch-Utilities.js",
-      "banner": "Scratch-Utilities.svg",
-      "tags": ["Utility", "Graphics", "Data Management", "Online", "Dangerous"],
-      "isDeprecated": true,
-      "date": "Last Updated: 04/05/2024"
-    },
     "Tune-Shark-V3": {
       "desc": "Advanced Audio Engine with complex Sound Control, Audio Effects and more",
       "creator": "SharkPool",
@@ -32,24 +23,6 @@
       "banner": "Tune-Shark-V3.svg",
       "tags": ["Utility", "Sound", "Category Expansion"],
       "date": "Last Updated: 07/12/2026"
-    },
-    "Tune-Shark": {
-      "desc": "Outdated Sound Engine for playing sounds. Please use Tune Shark V3",
-      "creator": "SharkPool",
-      "url": "Tune-Shark.js",
-      "banner": "Tune-Shark.svg",
-      "tags": ["Utility", "Sound", "Category Expansion"],
-      "isDeprecated": true,
-      "date": "Last Updated: 10/07/2024"
-    },
-    "Geometry-Dash-API": {
-      "desc": "Fetch statistics and information from Geometry Dash. Deprecated, expect incorrect values.",
-      "creator": "SharkPool, thank you RobTopGames and GD Colon",
-      "url": "Geometry-Dash-API.js",
-      "banner": "Geometry-Dash-API.svg",
-      "tags": ["Utility", "Graphics", "Data Management", "Online"],
-      "isDeprecated": true,
-      "date": "Last Updated: 04/10/2025"
     },
     "Hyper-Sense": {
       "desc": "New Sensing Blocks",
@@ -75,15 +48,6 @@
       "tags": ["Configuration", "Graphics"],
       "date": "Last Updated: 08/16/2026"
     },
-    "Better-Input": {
-      "desc": "Expansion of the 'Ask and Wait' Block. Deprecated, please use Popup-Phoenix",
-      "creator": "SharkPool",
-      "url": "Better-Input.js",
-      "banner": "Better-Input.svg",
-      "tags": ["Configuration", "Graphics"],
-      "isDeprecated": true,
-      "date": "Last Updated: 11/02/2024"
-    },
     "Camera-Sensing-Plus": {
       "desc": "Expansion of the 'Video Sensing' extension. Display the Camera on Sprites and take Photos",
       "creator": "SharkPool",
@@ -99,15 +63,6 @@
       "banner": "Particle-Engine.svg",
       "tags": ["Utility", "Graphics", "Data Management"],
       "date": "Last Updated: 02/01/2026"
-    },
-    "Particle-Tools": {
-      "desc": "Tools that make creating Particle Systems easy",
-      "creator": "SharkPool",
-      "url": "Particle-Tools.js",
-      "banner": "Particle-Tools.svg",
-      "tags": ["Utility", "Data Management"],
-      "isDeprecated": true,
-      "date": "Last Updated: 02/04/2024"
     },
     "Sprite-Effects": {
       "desc": "Apply SVG Filters to Images, Sprites, and the Canvas! Faster than Image Effects",
@@ -293,15 +248,6 @@
       "tags": ["Utility", "Data Management", "Online"],
       "date": "Last Updated: 01/16/2025"
     },
-    "Money-Utilities": {
-      "desc": "Convert Currencies and get Currency Information",
-      "creator": "SharkPool",
-      "url": "Money-Utilities.js",
-      "banner": "Money-Utilities.svg",
-      "tags": ["Math", "Online"],
-      "isDeprecated": true,
-      "date": "Last Updated: 04/04/2025"
-    },
     "Color-Master": {
       "desc": "Color Utility and Conversion Blocks",
       "creator": "SharkPool",
@@ -374,15 +320,6 @@
       "banner": "Extra-Controls.svg",
       "tags": ["Utility", "Category Expansion", "Runtime"],
       "date": "Last Updated: 05/04/2025"
-    },
-    "Captchas": {
-      "desc": "Simple Client-Based Captchas, this does not promise 100% security",
-      "creator": "SharkPool",
-      "url": "Captchas.js",
-      "banner": "Captchas.svg",
-      "tags": ["Utility", "Dangerous"],
-      "isDeprecated": true,
-      "date": "Released: 04/05/2024"
     },
     "Better-Comments": {
       "desc": "Better Comments with Color and Text Customization",
