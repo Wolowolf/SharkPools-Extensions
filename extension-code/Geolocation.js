@@ -1,10 +1,10 @@
 // Name: Geolocation
 // ID: SPgeolocation
-// Description: Grab the users location and other information.
+// Description: Grab the users location and other information, and watch it for changes.
 // By: SharkPool
 // License: MIT
 
-// Version 1.1.2
+// Version 1.2.0 (also has the blocks of SamuelLouf's Geolocation extension, which it replaced)
 
 (function (Scratch) {
   "use strict";
@@ -22,6 +22,11 @@
   const IP_CACHE = { ip: undefined, expires: undefined };
   const IP_INFO_CACHE = new Map();
   const proxy = "https://api.codetabs.com/v1/proxy/?quest=";
+  const MOVEMENT_THRESHOLD_DEGREES = 5 * 10 ** -5; // ~ 5.5 meters
+  const options = { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 };
+  let watcherID = null;
+  let lastLatitude = null;
+  let lastLongitude = null;
 
   class SPgeolocation {
     getInfo() {
@@ -85,6 +90,58 @@
               LONG2: { type: Scratch.ArgumentType.NUMBER, defaultValue: 10 }
             }
           },
+          "---",
+          {
+            opcode: "whenLocationChanged",
+            blockType: Scratch.BlockType.EVENT,
+            text: "when location changed",
+            isEdgeActivated: false
+          },
+          {
+            opcode: "startWatching",
+            blockType: Scratch.BlockType.COMMAND,
+            text: "start watching position"
+          },
+          {
+            opcode: "stopWatching",
+            blockType: Scratch.BlockType.COMMAND,
+            text: "stop watching position"
+          },
+          {
+            opcode: "isWatching",
+            blockType: Scratch.BlockType.BOOLEAN,
+            text: "watching position?",
+            disableMonitor: true
+          },
+          "---",
+          {
+            opcode: "setTimeoutTo",
+            blockType: Scratch.BlockType.COMMAND,
+            text: "set timeout to [SECONDS] seconds",
+            arguments: {
+              SECONDS: { type: Scratch.ArgumentType.NUMBER, defaultValue: 10 }
+            }
+          },
+          {
+            opcode: "getTimeout",
+            blockType: Scratch.BlockType.REPORTER,
+            text: "get timeout",
+            disableMonitor: true
+          },
+          {
+            opcode: "setAccuracy",
+            blockType: Scratch.BlockType.COMMAND,
+            text: "set accuracy to [ACCURACY]",
+            arguments: {
+              ACCURACY: { type: Scratch.ArgumentType.STRING, menu: "ACCURACY" }
+            }
+          },
+          {
+            opcode: "isHighAccuracy",
+            blockType: Scratch.BlockType.BOOLEAN,
+            text: "is high accuracy?",
+            disableMonitor: true
+          },
           { blockType: Scratch.BlockType.LABEL, text: "These are Unreliable" },
           {
             opcode: "getOthers",
@@ -98,7 +155,7 @@
         menus: {
           TYPES: {
             acceptReporters: true,
-            items: ["latitude", "longitude"]
+            items: ["latitude", "longitude", { text: "accuracy (meters)", value: "accuracy" }]
           },
           TYPES2: {
             acceptReporters: true,
@@ -116,26 +173,38 @@
               { "text": "longitude", "value": "longitude" }
             ]
           },
-          UNITS: ["miles", "kilometers"]
+          UNITS: ["miles", "kilometers"],
+          ACCURACY: {
+            acceptReporters: true,
+            items: ["high", "low"]
+          }
         }
       };
     }
 
     // Block Funcs
-    isAvailiable() {
+    _supported() {
       return Cast.toBoolean(navigator.geolocation);
+    }
+
+    // supported, allowed by the project and not blocked in the browser (Electron apps have no location service)
+    async isAvailiable() {
+      if (!this._supported() || navigator.userAgent.includes("Electron")) return false;
+      if (!await Scratch.canGeolocate()) return false;
+      const permission = await navigator.permissions.query({ name: "geolocation" });
+      return permission.state !== "denied";
     }
 
     async _locationInfo(option) {
       if (!await Scratch.canGeolocate()) return "";
-      if (!this.isAvailiable()) return "Geolocation isn't supported";
+      if (!this._supported()) return "Geolocation isn't supported";
 
-      const validOptions = ["latitude", "longitude", "altitude", "speed"];
+      const validOptions = ["latitude", "longitude", "accuracy", "altitude", "speed"];
       if (validOptions.indexOf(option) === -1) return "";
 
       try {
         const position = await new Promise((resolve, reject) => {
-          navigator.geolocation.getCurrentPosition(resolve, reject);
+          navigator.geolocation.getCurrentPosition(resolve, reject, options);
         });
 
         return position.coords[option] ?? "";
@@ -145,6 +214,39 @@
     }
     async getLocation(args) { return await this._locationInfo(args.TYPE) }
     async getOthers(args) { return await this._locationInfo(args.TYPE) }
+
+    // Watching the position
+    _updatePosition(coords) {
+      const moved =
+        lastLatitude === null || lastLongitude === null ||
+        Math.abs(lastLatitude - coords.latitude) >= MOVEMENT_THRESHOLD_DEGREES ||
+        Math.abs(lastLongitude - coords.longitude) >= MOVEMENT_THRESHOLD_DEGREES;
+      lastLatitude = coords.latitude;
+      lastLongitude = coords.longitude;
+      if (moved) Scratch.vm.runtime.startHats("SPgeolocation_whenLocationChanged");
+    }
+
+    async startWatching() {
+      if (watcherID !== null || !await this.isAvailiable()) return;
+      watcherID = navigator.geolocation.watchPosition(
+        (position) => this._updatePosition(position.coords),
+        (error) => console.warn(error),
+        options
+      );
+    }
+
+    stopWatching() {
+      if (watcherID === null) return;
+      navigator.geolocation.clearWatch(watcherID);
+      watcherID = null;
+    }
+
+    isWatching() { return watcherID !== null }
+
+    setTimeoutTo(args) { options.timeout = Cast.toNumber(args.SECONDS) * 1000 }
+    getTimeout() { return options.timeout / 1000 }
+    setAccuracy(args) { options.enableHighAccuracy = Cast.toString(args.ACCURACY) === "high" }
+    isHighAccuracy() { return options.enableHighAccuracy }
 
     async getIP() {
       if (!await Scratch.canGeolocate()) return "";

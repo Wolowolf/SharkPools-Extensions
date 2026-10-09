@@ -42,22 +42,6 @@
       "isDeprecated": true,
       "date": "Last Updated: 10/07/2024"
     },
-    "Camera": {
-      "desc": "Use Cameras to move the visible part of the Stage",
-      "creator": "SharkPool",
-      "url": "Camera.js",
-      "banner": "Camera.svg",
-      "tags": ["Utility", "Graphics", "Category Expansion"],
-      "date": "Released: 05/14/2026"
-    },
-    "Added-Motion": {
-      "desc": "New Motion Blocks",
-      "creator": "SharkPool",
-      "url": "Added-Motion.js",
-      "banner": "Added-Motion.svg",
-      "tags": ["Utility", "Category Expansion"],
-      "date": "Last Updated: 12/12/2023"
-    },
     "Geometry-Dash-API": {
       "desc": "Fetch statistics and information from Geometry Dash. Deprecated, expect incorrect values.",
       "creator": "SharkPool, thank you RobTopGames and GD Colon",
@@ -66,14 +50,6 @@
       "tags": ["Utility", "Graphics", "Data Management", "Online"],
       "isDeprecated": true,
       "date": "Last Updated: 04/10/2025"
-    },
-    "Sound-Waves": {
-      "desc": "Play various Oscillators in your Project",
-      "creator": "SharkPool",
-      "url": "Sound-Waves.js",
-      "banner": "Sound-Waves.svg",
-      "tags": ["Sound", "Hardware"],
-      "date": "Last Updated: 06/29/2025"
     },
     "Hyper-Sense": {
       "desc": "New Sensing Blocks",
@@ -141,14 +117,6 @@
       "tags": ["Utility", "Graphics", "Category Expansion"],
       "date": "Last Updated: 07/18/2026"
     },
-    "Image-Effects": {
-      "desc": "Apply a variety of visual effects to Images",
-      "creator": "SharkPool",
-      "url": "Image-Effects.js",
-      "banner": "Image-Effects.svg",
-      "tags": ["Utility", "Graphics", "Category Expansion"],
-      "date": "Last Updated: 07/29/2026"
-    },
     "Image-Editor": {
       "desc": "Create and modify images and their pixel data",
       "creator": "SharkPool",
@@ -156,14 +124,6 @@
       "banner": "Image-Editor.svg",
       "tags": ["Utility", "Graphics", "Data Management"],
       "date": "Last Updated: 04/29/2026"
-    },
-    "Pixel-Utilities": {
-      "desc": "Some Utility Blocks that Roltycore 2's Developer made for some reason",
-      "creator": "LittleBlueGamer",
-      "url": "Pixel-Utilities.js",
-      "banner": "Pixel-Utilities.svg",
-      "tags": ["Utility", "Math"],
-      "date": "Last Updated: 03/07/2024"
     },
     "Recording": {
       "desc": "Blocks for Recording your Microphone while your Project runs",
@@ -245,14 +205,6 @@
       "tags": ["Hardware", "Dangerous"],
       "date": "Released: 10/03/2023"
     },
-    "Tile-Grids": {
-      "desc": "Position Sprites on Tile Grids",
-      "creator": "SharkPool",
-      "url": "Tile-Grids.js",
-      "banner": "Tile-Grids.svg",
-      "tags": ["Utility"],
-      "date": "Released: 10/09/2023"
-    },
     "Animations": {
       "desc": "Create Animations and Keyframes in your Project",
       "creator": "SharkPool",
@@ -268,14 +220,6 @@
       "banner": "Text-to-Speech.svg",
       "tags": ["Sound", "Online", "Category Expansion"],
       "date": "Last Updated: 08/20/2026"
-    },
-    "Font-Manager": {
-      "desc": "Manage, Create, and Delete Fonts from your Project",
-      "creator": "SharkPool, 0znzw",
-      "url": "Font-Manager.js",
-      "banner": "Font-Manager.svg",
-      "tags": ["Utility", "Graphics", "Data Management", "Configuration"],
-      "date": "Last Updated: 07/16/2024"
     },
     "Pause": {
       "desc": "Pause your Project, Scripts, and Sprites",
@@ -300,22 +244,6 @@
       "banner": "Messages-Plus.svg",
       "tags": ["Utility", "Data Management", "Category Expansion", "Runtime"],
       "date": "Last Updated: 07/12/2026"
-    },
-    "Advanced-Messages": {
-      "desc": "New Message Blocks for Advanced, Non-Vanilla Purposes",
-      "creator": "SharkPool",
-      "url": "Advanced-Messages.js",
-      "banner": "Advanced-Messages.svg",
-      "tags": ["Utility", "Data Management", "Category Expansion"],
-      "date": "Last Updated: 04/05/2025"
-    },
-    "Events-Plus": {
-      "desc": "New Event Blocks",
-      "creator": "SharkPool",
-      "url": "Events-Plus.js",
-      "banner": "Events-Plus.svg",
-      "tags": ["Utility", "Category Expansion", "Configuration", "Runtime"],
-      "date": "Last Updated: 08/16/2026"
     },
     "Runtime-Events": {
       "desc": "Detect Events from Runtime",
@@ -374,14 +302,6 @@
       "isDeprecated": true,
       "date": "Last Updated: 04/04/2025"
     },
-    "Display-Text": {
-      "desc": "Display Text in your Projects, with Markdown Support",
-      "creator": "SharkPool",
-      "url": "Display-Text-V2.js",
-      "banner": "Display-Text.svg",
-      "tags": ["Utility", "Graphics", "Category Expansion"],
-      "date": "Last Updated: 06/10/2026"
-    },
     "Color-Master": {
       "desc": "Color Utility and Conversion Blocks",
       "creator": "SharkPool",
@@ -439,15 +359,6 @@
       "status": "",
       "date": "Released: 01/25/2024"
     },
-    "Since-2000": {
-      "desc": "Expansion of the 'since 2000' Blocks",
-      "creator": "Ammunimium, 0znzw",
-      "url": "Since-2000.js",
-      "banner": "Since-2000.svg",
-      "status": "",
-      "tags": ["Utility", "Math", "Time"],
-      "date": "Last Updated: 11/20/2025"
-    },
     "Seeds": {
       "desc": "Generate random seeded numbers, generated terrain, and more",
       "creator": "SharkPool",
@@ -456,14 +367,6 @@
       "tags": ["Utility", "Math"],
       "date": "Last Updated: 11/29/2023"
     },
-    "Perlin-Noise": {
-      "desc": "Generate randomized Perlin Noise",
-      "creator": "SharkPool",
-      "url": "Perlin-Noise.js",
-      "banner": "Perlin-Noise.svg",
-      "tags": ["Utility", "Graphics", "Math"],
-      "date": "Last Updated: 08/10/2026"
-    },
     "Extra-Controls": {
       "desc": "New Advanced Control Blocks",
       "creator": "SharkPool",
@@ -471,14 +374,6 @@
       "banner": "Extra-Controls.svg",
       "tags": ["Utility", "Category Expansion", "Runtime"],
       "date": "Last Updated: 05/04/2025"
-    },
-    "More-Operators": {
-      "desc": "New Powerful Operator Blocks",
-      "creator": "SharkPool",
-      "url": "More-Operators.js",
-      "banner": "More-Operators.svg",
-      "tags": ["Utility", "Category Expansion", "Math"],
-      "date": "Last Updated: 05/19/2025"
     },
     "Captchas": {
       "desc": "Simple Client-Based Captchas, this does not promise 100% security",
@@ -520,14 +415,6 @@
       "banner": "SVG-Spritesheets.svg",
       "tags": ["Utility", "Graphics", "Data Management"],
       "date": "Last Updated: 12/20/2024"
-    },
-    "Community-Spotlight": {
-      "desc": "Display and Promote Projects for free",
-      "creator": "SharkPool, Community Spotlight Team",
-      "url": "Community-Spotlight.js",
-      "banner": "Community-Spotlight.svg",
-      "tags": ["Graphics", "Sound", "Data Management", "Online"],
-      "date": "Last Updated: 06/03/2026"
     },
     "GIF-Manager": {
       "desc": "Create and Split GIF Frames",
