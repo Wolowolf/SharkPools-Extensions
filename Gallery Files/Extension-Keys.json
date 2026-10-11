@@ -160,14 +160,6 @@
       "tags": ["Utility", "Data Management", "Category Expansion", "Runtime"],
       "date": "Last Updated: 07/12/2026"
     },
-    "Fetch-Plus": {
-      "desc": "Fetch and Encode Content from URLs while viewing the Progress and Status of the Fetch",
-      "creator": "SharkPool",
-      "url": "Fetch-Progress.js",
-      "banner": "Fetch-Plus.svg",
-      "tags": ["Data Management", "Online"],
-      "date": "Last Updated: 04/04/2025"
-    },
     "Geolocation": {
       "desc": "Get users' Location and calculate Real-World Distances",
       "creator": "SharkPool",
