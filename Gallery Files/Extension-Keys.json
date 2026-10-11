@@ -72,14 +72,6 @@
       "tags": ["Utility", "Graphics", "Category Expansion"],
       "date": "Last Updated: 07/18/2026"
     },
-    "Image-Editor": {
-      "desc": "Create and modify images and their pixel data",
-      "creator": "SharkPool",
-      "url": "Image-Editor.js",
-      "banner": "Image-Editor.svg",
-      "tags": ["Utility", "Graphics", "Data Management"],
-      "date": "Last Updated: 04/29/2026"
-    },
     "Recording": {
       "desc": "Blocks for Recording your Microphone while your Project runs",
       "creator": "SharkPool",
@@ -160,22 +152,6 @@
       "tags": ["Utility", "Graphics", "Math"],
       "date": "Last Updated: 11/08/2025"
     },
-    "Pause": {
-      "desc": "Pause your Project, Scripts, and Sprites",
-      "creator": "SharkPool",
-      "url": "Pause.js",
-      "banner": "Pause-Utilities.svg",
-      "tags": ["Utility", "Dangerous", "Configuration", "Runtime"],
-      "date": "Re-Released: 08/14/2026"
-    },
-    "Script-Control": {
-      "desc": "Monitor and Control specific Scripts in your Project, inspired by 0znzw",
-      "creator": "SharkPool",
-      "url": "Script-Control.js",
-      "banner": "Script-Control.svg",
-      "tags": ["Utility", "Configuration", "Runtime"],
-      "date": "Last Updated: 05/30/2025"
-    },
     "Messages-Plus": {
       "desc": "Powerful Message Blocks that work with Vanilla Broadcasts",
       "creator": "SharkPool",
@@ -183,14 +159,6 @@
       "banner": "Messages-Plus.svg",
       "tags": ["Utility", "Data Management", "Category Expansion", "Runtime"],
       "date": "Last Updated: 07/12/2026"
-    },
-    "Runtime-Events": {
-      "desc": "Detect Events from Runtime",
-      "creator": "SharkPool",
-      "url": "Runtime-Events.js",
-      "banner": "Runtime-Events.svg",
-      "tags": ["Utility", "Category Expansion", "Runtime"],
-      "date": "Last Updated: 08/11/2024"
     },
     "Fetch-Plus": {
       "desc": "Fetch and Encode Content from URLs while viewing the Progress and Status of the Fetch",
@@ -272,22 +240,6 @@
       "tags": ["Utility", "Category Expansion", "Runtime"],
       "date": "Last Updated: 05/04/2025"
     },
-    "Better-Comments": {
-      "desc": "Better Comments with Color and Text Customization",
-      "creator": "SharkPool",
-      "url": "Better-Comments.js",
-      "banner": "Better-Comments.svg",
-      "tags": ["Editor Tool"],
-      "date": "Last Updated: 08/28/2025"
-    },
-    "Sprite-Panel": {
-      "desc": "Addon for viewing and managing Sprites and Clones",
-      "creator": "SharkPool, FurryR",
-      "url": "Sprite-Panel.js",
-      "banner": "Sprite-Panel.svg",
-      "tags": ["Utility", "Editor Tool"],
-      "date": "Last Updated: 05/06/2025"
-    },
     "DOM-Selector": {
       "desc": "Read Elements and Create Events from the website HTML",
       "creator": "SharkPool",
@@ -312,14 +264,6 @@
       "tags": ["Utility", "Graphics", "Data Management"],
       "date": "Released: 08/29/2024"
     },
-    "Swift-JSON": {
-      "desc": "Super Fast JSON and Array extension",
-      "creator": "SharkPool",
-      "url": "JSON-Array.js",
-      "banner": "JSON-Array.svg",
-      "tags": ["Utility", "Data Management", "Math", "Category Expansion"],
-      "date": "Last Updated: 09/12/2026"
-    },
     "My-Blocks-Plus": {
       "desc": "Better Custom Blocks",
       "creator": "SharkPool, CST1229, 0znzw",
@@ -327,14 +271,6 @@
       "banner": "My-Blocks-Plus.svg",
       "tags": ["Utility", "Category Expansion", "Editor Tool", "Configuration", "Runtime", "Dangerous"],
       "date": "Last Updated: 05/21/2026"
-    },
-    "Dropdown-Maker": {
-      "desc": "Create Custom Dropdowns! Best paired with My Blocks+",
-      "creator": "SharkPool, CST1229, 0znzw",
-      "url": "Dropdown-Maker.js",
-      "banner": "Dropdown-Maker.svg",
-      "tags": ["Utility", "Data Management", "Editor Tool", "Configuration"],
-      "date": "Last Updated: 01/14/2026"
     },
     "Turbo-Skins": {
       "desc": "Improved Skins extension, inspired by LilyMakesThings",
