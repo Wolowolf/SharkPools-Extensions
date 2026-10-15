@@ -22,12 +22,6 @@
 
   if (!Scratch.vm.extensionManager.isExtensionLoaded("videoSensing")) runtime.extensionManager.loadExtensionIdSync("videoSensing");
 
-  /* Deprecation Marker */
-  function hexToRgb(hex) {
-    return [parseInt(hex.slice(1, 3), 16), parseInt(hex.slice(3, 5), 16), parseInt(hex.slice(5, 7), 16)];
-  }
-  /* Marker End */
-
   const canvasElement = document.createElement("canvas");
   let canUse = false;
   function hasFrontOrBackCamera() {
@@ -36,9 +30,6 @@
   }
   hasFrontOrBackCamera();
 
-  /* Deprecation Marker */
-  let legacyMode = true;
-  /* Marker End */
   let OGvideoID = -1;
 
   class CameraSensingPlus {
@@ -163,136 +154,6 @@
               W_H: { type: Scratch.ArgumentType.STRING, menu: "widthHeight" }
             }
           },
-          /* Deprecation Marker */
-          { blockType: Scratch.BlockType.LABEL, text: "Feed Visuals" },
-          {
-            func: "enableLegacy",
-            blockType: Scratch.BlockType.BUTTON,
-            hideFromPalette: !legacyMode,
-            text: "Enable Legacy Blocks"
-          },
-          {
-            opcode: "deleteColor",
-            blockType: Scratch.BlockType.REPORTER,
-            text: "remove color [COLOR] from [DATA_URI]",
-            hideFromPalette: legacyMode,
-            arguments: {
-              COLOR: { type: Scratch.ArgumentType.COLOR, defaultValue: "#ff0000" },
-              DATA_URI: { type: Scratch.ArgumentType.STRING, defaultValue: "insert-data.uri" }
-            }
-          },
-          {
-            opcode: "replaceColor",
-            blockType: Scratch.BlockType.REPORTER,
-            text: "replace color [COLOR] with [REPLACE_COLOR] from [DATA_URI]",
-            hideFromPalette: legacyMode,
-            arguments: {
-              COLOR: { type: Scratch.ArgumentType.COLOR, defaultValue: "#ff0000" },
-              REPLACE_COLOR: { type: Scratch.ArgumentType.COLOR, defaultValue: "#00ff00" },
-              DATA_URI: { type: Scratch.ArgumentType.STRING, defaultValue: "insert-data.uri" }
-            }
-          },
-          {
-            opcode: "setSoftness",
-            blockType: Scratch.BlockType.COMMAND,
-            text: "set softness of color detection to [AMT]%",
-            hideFromPalette: legacyMode,
-            arguments: {
-              AMT: { type: Scratch.ArgumentType.NUMBER, defaultValue: 10 }
-            }
-          },
-          "---",
-          {
-            opcode: "clipImage",
-            blockType: Scratch.BlockType.REPORTER,
-            text: "cut out [CUTOUT] from [MAIN]",
-            hideFromPalette: legacyMode,
-            arguments: {
-              MAIN: { type: Scratch.ArgumentType.STRING, defaultValue: "data.uri-here" },
-              CUTOUT: { type: Scratch.ArgumentType.STRING, defaultValue: "cutout-data.uri-here" }
-            }
-          },
-          {
-            opcode: "setCutout",
-            blockType: Scratch.BlockType.COMMAND,
-            text: "set cutout position to x [X] y [Y]",
-            hideFromPalette: legacyMode,
-            arguments: {
-              X: { type: Scratch.ArgumentType.NUMBER, defaultValue: 0 },
-              Y: { type: Scratch.ArgumentType.NUMBER, defaultValue: 0 }
-            }
-          },
-          {
-            opcode: "changeCutout",
-            blockType: Scratch.BlockType.COMMAND,
-            text: "change cutout position by x [X] y [Y]",
-            hideFromPalette: legacyMode,
-            arguments: {
-              X: { type: Scratch.ArgumentType.NUMBER, defaultValue: 10 },
-              Y: { type: Scratch.ArgumentType.NUMBER, defaultValue: 10 }
-            }
-          },
-          {
-            opcode: "currentCut",
-            blockType: Scratch.BlockType.REPORTER,
-            text: "current cutout [POS]",
-            disableMonitor: true,
-            hideFromPalette: legacyMode,
-            arguments: {
-              POS: { type: Scratch.ArgumentType.STRING, menu: "positions" }
-            }
-          },
-          "---",
-          {
-            opcode: "setScale",
-            blockType: Scratch.BlockType.COMMAND,
-            text: "set clipping size to [SIZE]%",
-            hideFromPalette: legacyMode,
-            arguments: {
-              SIZE: { type: Scratch.ArgumentType.NUMBER, defaultValue: 100 }
-            }
-          },
-          {
-            opcode: "changeScale",
-            blockType: Scratch.BlockType.COMMAND,
-            text: "change clipping size by [SIZE]",
-            hideFromPalette: legacyMode,
-            arguments: {
-              SIZE: { type: Scratch.ArgumentType.NUMBER, defaultValue: 10 }
-            }
-          },
-          {
-            opcode: "currentScale",
-            blockType: Scratch.BlockType.REPORTER,
-            text: "clipping size",
-            hideFromPalette: legacyMode
-          },
-          "---",
-          {
-            opcode: "setDirection",
-            blockType: Scratch.BlockType.COMMAND,
-            text: "set clipping direction to [ANGLE]",
-            hideFromPalette: legacyMode,
-            arguments: {
-              ANGLE: { type: Scratch.ArgumentType.ANGLE, defaultValue: 90 }
-            }
-          },
-          {
-            opcode: "changeDirection",
-            blockType: Scratch.BlockType.COMMAND,
-            text: "change clipping direction by [ANGLE]",
-            hideFromPalette: legacyMode,
-            arguments: {
-              ANGLE: { type: Scratch.ArgumentType.ANGLE, defaultValue: 15 }
-            }
-          },
-          {
-            opcode: "currentDir",
-            blockType: Scratch.BlockType.REPORTER,
-            hideFromPalette: legacyMode,
-            text: "clipping direction"
-          }
-          /* Marker End */
         ],
         menus: {
           onOffMenu: ["on", "off"],
@@ -305,9 +166,6 @@
     }
 
     // Helper Funcs
-    /* Deprecation Marker */
-    enableLegacy() { legacyMode = false; vm.extensionManager.refreshBlocks() }
-    /* Marker End */
 
     getTargets() {
       const spriteNames = [{ text: "myself", value: "_myself_" }, { text: "Stage", value: "_stage_" }];
@@ -437,113 +295,6 @@
       if (this.videoElement) return this.printCapture();
       else return "Camera is Off";
     }
-
-    /* Deprecation Marker */
-    // Legacy Blocks
-    setCutout(args) {
-      this.cutSize = [
-        Scratch.Cast.toNumber(args.X),
-        Scratch.Cast.toNumber(args.Y)
-      ];
-    }
-
-    changeCutout(args) {
-      this.cutSize = [
-        this.cutSize[0] + Scratch.Cast.toNumber(args.X),
-        this.cutSize[1] + Scratch.Cast.toNumber(args.Y)
-      ];
-    }
-
-    currentCut(args) { return this.cutSize[args.POS === "x" ? 0 : 1] }
-
-    setScale(args) { this.scale = Scratch.Cast.toNumber(args.SIZE) }
-
-    changeScale(args) { this.scale = this.scale + Scratch.Cast.toNumber(args.SIZE) }
-
-    setDirection(args) { this.cutoutDir = Scratch.Cast.toNumber(args.ANGLE) }
-
-    changeDirection(args) {
-      let direction = this.cutoutDir + Scratch.Cast.toNumber(args.ANGLE);
-      if (direction > 180) direction = -180 + Scratch.Cast.toNumber(args.ANGLE);
-      if (direction < -180) direction = 180 + Scratch.Cast.toNumber(args.ANGLE);
-      this.cutoutDir = direction;
-    }
-
-    currentScale() { return this.scale }
-
-    currentDir() { return this.cutoutDir }
-
-    setSoftness(args) { this.softness = Scratch.Cast.toNumber(args.AMT) }
-
-    deleteColor(args) { return this.replaceColor({ ...args, override: true }) }
-
-    replaceColor(args) {
-      const colRemove = hexToRgb(args.COLOR);
-      const colReplace = hexToRgb(args.REPLACE_COLOR || args.COLOR);
-      const canvasElement = document.createElement("canvas");
-      const context = canvasElement.getContext("2d");
-      const imageElement = new Image();
-      const softness = this.softness;
-      return new Promise(resolve => {
-        imageElement.onload = () => {
-          canvasElement.width = imageElement.width;
-          canvasElement.height = imageElement.height;
-          context.drawImage(imageElement, 0, 0);
-          const imageData = context.getImageData(0, 0, canvasElement.width, canvasElement.height);
-          const data = imageData.data;
-
-          for (let i = 0; i < data.length; i += 4) {
-            const r = data[i];
-            const g = data[i + 1];
-            const b = data[i + 2];
-            if (
-              r >= colRemove[0] - softness && r <= colRemove[0] + softness &&
-              g >= colRemove[1] - softness && g <= colRemove[1] + softness &&
-              b >= colRemove[2] - softness && b <= colRemove[2] + softness
-            ) {
-              data[i] = colReplace[0];
-              data[i + 1] = colReplace[1];
-              data[i + 2] = colReplace[2];
-              data[i + 3] = args.override !== undefined ? 0 : data[i + 3];
-            }
-          }
-          context.putImageData(imageData, 0, 0);
-          resolve(canvasElement.toDataURL("image/png"));
-        };
-        imageElement.src = args.DATA_URI;
-      });
-    }
-
-    clipImage(args) {
-      return new Promise((resolve, reject) => {
-        const mainImage = new Image();
-        mainImage.onload = () => {
-          const cutoutImage = new Image();
-          cutoutImage.onload = () => {
-            const canvas = document.createElement("canvas");
-            canvas.width = mainImage.width;
-            canvas.height = mainImage.height;
-            const context = canvas.getContext("2d");
-            const scaledWidth = cutoutImage.width + this.scale;
-            const scaledHeight = cutoutImage.height + this.scale;
-            const cutX = this.cutSize[0] + (mainImage.width / 2) - (scaledWidth / 2);
-            const cutY = this.cutSize[1] - (mainImage.height / 2) + (scaledHeight / 2);
-
-            context.drawImage(mainImage, 0, 0);
-            context.globalCompositeOperation = "destination-in";
-            context.translate(cutX + scaledWidth / 2, cutY * -1 + scaledHeight / 2);
-            context.rotate(((this.cutoutDir + 270) * Math.PI) / 180);
-            context.drawImage(cutoutImage, -scaledWidth / 2, -scaledHeight / 2, scaledWidth, scaledHeight);
-            context.setTransform(1, 0, 0, 1, 0, 0);
-            context.globalCompositeOperation = "source-over";
-            resolve(canvas.toDataURL("image/png"));
-          };
-          cutoutImage.src = args.CUTOUT;
-        };
-        mainImage.src = args.MAIN;
-      });
-    }
-    /* Marker End */
   }
 
   Scratch.extensions.register(new CameraSensingPlus());
