@@ -8,14 +8,6 @@
       "tags": ["Utility", "Dangerous", "Math"],
       "date": "Last Updated: 07/21/2025"
     },
-    "YouTube-Operations": {
-      "desc": "Fetch and play Youtube videos and statistics in your Project",
-      "creator": "SharkPool, Nekl300 (contributor)",
-      "url": "YouTube-Operations.js",
-      "banner": "YouTube-Operations.svg",
-      "tags": ["Utility", "Sound", "Online"],
-      "date": "Last Updated: 08/20/2026"
-    },
     "Tune-Shark-V3": {
       "desc": "Advanced Audio Engine with complex Sound Control, Audio Effects and more",
       "creator": "SharkPool",
@@ -231,14 +223,6 @@
       "banner": "Extra-Controls.svg",
       "tags": ["Utility", "Category Expansion", "Runtime"],
       "date": "Last Updated: 05/04/2025"
-    },
-    "DOM-Selector": {
-      "desc": "Read Elements and Create Events from the website HTML",
-      "creator": "SharkPool",
-      "url": "DOM-Selector.js",
-      "banner": "DOM-Selector.svg",
-      "tags": ["Utility", "Graphics", "Data Management", "Configuration"],
-      "date": "Last Updated: 07/13/2025"
     },
     "SVG-Spritesheets": {
       "desc": "Create and Export SVG Spritesheets",
