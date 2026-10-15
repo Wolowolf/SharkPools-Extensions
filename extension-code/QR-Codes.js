@@ -68,16 +68,6 @@
             }
           },
           /* Deprecation Marker */
-          {
-            opcode: "setExport", blockType: Scratch.BlockType.COMMAND,
-            text: "set QR export type to [TYPE]", hideFromPalette: true,
-            arguments: { TYPE: { type: Scratch.ArgumentType.STRING, menu: "EXPORTS" } }
-          },
-          {
-            opcode: "returnAs", blockType: Scratch.BlockType.COMMAND,
-            text: "return QR code as [TYPE]", hideFromPalette: true,
-            arguments: { TYPE: { type: Scratch.ArgumentType.STRING, menu: "EXPORTS2" } }
-          }
           /* Marker End */
         ],
         menus: {
@@ -136,8 +126,6 @@
     }
 
     /* Deprecation Marker */
-    setExport() { return }
-    returnAs() { return }
     /* Marker End */
   }
 

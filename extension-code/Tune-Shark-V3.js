@@ -819,23 +819,6 @@
             },
           },
           /* Deprecation Marker */
-          {
-            opcode: "save2Project", blockType: Scratch.BlockType.COMMAND,
-            text: Scratch.translate("[SAVE] all sounds to project"),
-            blockIconURI: extraIcons.set, hideFromPalette: true,
-            arguments: { SAVE: { type: Scratch.ArgumentType.STRING, menu: "saveMenu" } },
-          },
-          {
-            opcode: "convertSound", blockType: Scratch.BlockType.COMMAND,
-            text: "convert sound [NAME1] from URL to URI and save to [NAME2]",
-            blockIconURI: extraIcons.set, hideFromPalette: true,
-            arguments: { NAME1: { type: Scratch.ArgumentType.STRING }, NAME2: { type: Scratch.ArgumentType.STRING } },
-          },
-          {
-            opcode: "setThing", blockType: Scratch.BlockType.COMMAND, hideFromPalette: true,
-            text: "set [TYPE] of sound [NAME] to [VALUE]",
-            arguments: { NAME: { type: Scratch.ArgumentType.STRING, defaultValue: "MySound" }, TYPE: { type: Scratch.ArgumentType.STRING, menu: "singleEffects" }, VALUE: { type: Scratch.ArgumentType.NUMBER } },
-          },
           /* Marker End */
         ],
         menus: {
@@ -1938,38 +1921,6 @@
     deserialize(data) {
       this.loadStorage(data.SPtuneShark3);
     }
-    save2Project(args) {
-      settings.canSave = args.SAVE === "save";
-      if (!Scratch.extensions.isPenguinMod) {
-        if (settings.canSave) {
-          const convertedBank = JSON.parse(JSON.stringify(soundBank));
-          Object.values(convertedBank).forEach(item => delete item.context);
-          runtime.extensionStorage["SPtuneShark3"] = {
-            bank: convertedBank,
-            settings,
-          };
-        } else {
-          runtime.extensionStorage["SPtuneShark3"] = undefined;
-        }
-      }
-    }
-    async convertSound(args, util) {
-      const sound = soundBank[args.NAME1];
-      if (sound === undefined) return;
-      try {
-        const response = await Scratch.fetch(sound.src);
-        const audioBlob = await response.blob();
-        const audioDataURL = await new Promise((resolve) => {
-          const reader = new FileReader();
-          reader.onloadend = () => resolve(reader.result);
-          reader.readAsDataURL(audioBlob);
-        });
-        await this.importURL({ NAME: args.NAME2, URL: audioDataURL }, util);
-      } catch (e) {
-        console.error(e);
-      }
-    }
-    setThing(args) { this.setThingNew(args) }
     /* Marker End */
   }
 

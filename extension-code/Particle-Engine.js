@@ -978,16 +978,6 @@ void main() {
             },
           },
           /* Deprecation Marker */
-          {
-            opcode: "setCanvasSize", hideFromPalette: true,
-            blockType: Scratch.BlockType.COMMAND,
-            text: "set stage size of [TARGET] engine to width [w] height [h]",
-            arguments: {
-              TARGET: { type: Scratch.ArgumentType.STRING, menu: "TARGETS" },
-              w: { type: Scratch.ArgumentType.NUMBER, defaultValue: 480 },
-              h: { type: Scratch.ArgumentType.NUMBER, defaultValue: 360 },
-            },
-          },
           /* Marker End */
         ],
         menus: {
@@ -1439,11 +1429,6 @@ void main() {
     }
 
     /* Deprecation Marker */
-    setCanvasSize(args) {
-      this.setCanvasQuality({
-        TARGET: args.TARGET, QUALITY: (Cast.toNumber(args.w) + Cast.toNumber(args.h)) / 2
-      });
-    }
     /* Marker End */
   }
 

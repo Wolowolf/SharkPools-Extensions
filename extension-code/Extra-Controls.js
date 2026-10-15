@@ -482,10 +482,6 @@
             }
           },
           /* Deprecation Marker */
-          {
-            opcode: "deleteRun", extensions: ["colours_control"], blockType: Scratch.BlockType.LOOP,
-            text: "delete this clone and tell main sprite", isTerminal: true, hideFromPalette: true
-          },
           /* Marker End */
           { blockType: Scratch.BlockType.LABEL, text: "Functions" },
           {
@@ -1095,14 +1091,6 @@
     }
 
     /* Deprecation Marker */
-    deleteRun(args, util) {
-      const target = util.target;
-      if (target.isOriginal) return;
-      const branch = this.getThisBlock(util, true, 1);
-      runtime.disposeTarget(target);
-      runtime.stopForTarget(target);
-      if (branch) this.addMissKeys(util.thread, this.pushThread(branch, { ...util, target: target.sprite.clones[0] }, { stackClick: false }));
-    }
     /* Marker End */
 
     onCall(args, util) {

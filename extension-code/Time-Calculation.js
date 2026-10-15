@@ -110,13 +110,6 @@
             arguments: {
               TIME: { type: Scratch.ArgumentType.STRING, defaultValue: "2007-03-14 09:34:00" }
             },
-          },
-          {
-            opcode: "convertToValue", blockType: Scratch.BlockType.REPORTER, // Deprecated
-            text: "convert [VALUE] to [TIME]", hideFromPalette: true,
-            arguments: {
-              VALUE: { type: Scratch.ArgumentType.STRING, defaultValue: "1970-01-01 00:00:00" }, TIME: { type: Scratch.ArgumentType.STRING, menu: "Time" }
-            },
           }
         ],
         menus: {
@@ -263,19 +256,6 @@
       return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
     }
 
-    convertToValue(args) {
-      let date = new Date(args.VALUE ? args.VALUE : null);
-      date = Math.round(date.getTime() / 1000) - 28800;
-      switch (args.TIME) {
-        case "year": return date / 31536000;
-        case "month": return date / 2629746;
-        case "day": return date / 86400;
-        case "hour": return date / 3600;
-        case "minute": return date / 60;
-        case "second": return date;
-        default: return "Invalid Menu Input";
-      }
-    }
   }
   Scratch.extensions.register(new TimeCalc());
 })(Scratch);

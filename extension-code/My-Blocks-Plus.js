@@ -734,14 +734,6 @@
           }
           return node;
         }
-        case "SPmbpCST_runBranch": {
-          const node = { kind: "SPmbpCST.runBranch", index: this.descendInputOfBlock(block, "INDEX") };
-          if (!this.thread[targetProcData]) return node;
-          const procData = this.thread[targetProcData][this.script.procedureCode];
-          const procedureBlock = procData?.block;
-          if (procedureBlock) node.appenders = procData.appenders;
-          return node;
-        }
         default: return _ogIRdescendStack.call(this, block);
       }
     };
@@ -810,23 +802,6 @@
           this.source += `p${node.index} = ${val.asUnknown()};\n`;
           break;
         }
-        case "SPmbpCST.runBranch": {
-          if (this.isProcedure) {
-            const index = this.localVariables.next();
-            this.source += `const ${index} = ${this.descendInput(node.index).asNumber()} - 1;\n`;
-            this.source += `switch (${index}.toString()) {\n`;
-            for (let i = 0; i < node.appenders.length; i++) {
-              const argInd = node.appenders[i][0];
-              this.source += `case "${i}": {\n`;
-              if (this.script.yields) this.source += `yield* p${argInd}();\n`;
-              else this.source += `p${argInd}();\n`;
-              this.source += `break;\n`;
-              this.source += `}\n`;
-            }
-            this.source += `}\n`;
-          }
-          break;
-        }
         default: return _ogJSdescendStack.call(this, node);
       }
     };
@@ -874,7 +849,7 @@
   if (Scratch.gui) Scratch.gui.getBlockly().then(SB => {
     const recolorables = [
       "argument_reporter_string_number", "argument_reporter_boolean",
-      "SPmbpCST_setParam", "SPmbpCST_getParam", "SPmbpCST_runBranch",
+      "SPmbpCST_setParam", "SPmbpCST_getParam",
       "SPmbpCST_evalParam", "procedures_return",
       // penguinmod
       "procedures_definition_return", "procedures_set"
@@ -2021,17 +1996,6 @@
             },
           },
           {
-            opcode: "runBranch",
-            blockType: Scratch.BlockType.COMMAND,
-            text: "start branch [INDEX] [ICON]",
-            extensions: ["SPmbpCST_defineColored"],
-            hideFromPalette: isPM || extensionRemovable,
-            arguments: {
-              INDEX: { type: Scratch.ArgumentType.NUMBER, defaultValue: 1 },
-              ICON: { type: Scratch.ArgumentType.IMAGE, dataURI: guiURIs("branchStart") }
-            },
-          },
-          {
             opcode: "stopCallerScript",
             blockType: Scratch.BlockType.COMMAND,
             text: "stop caller script",
@@ -2148,28 +2112,6 @@
       // stops threads entirely, including custom blocks contexts
       // more powerful than 'util.stopThisScript()'
       util.thread.status = 4;
-    }
-
-    runBranch(args, util) {
-      const thread = util.thread;
-      if (!util.thread[targetProcData]) return;
-
-      const procBlock = util.thread[targetProcData].block;
-      const store = storeGet(procBlock.mutation.proccode, thread.target);
-      if (!store || !store.inputs) return;
-
-      const allInputs = util.thread[targetProcData].params[1];
-      const branches = [];
-      for (let i = 0; i < allInputs.length; i++) {
-        if (store.inputs[allInputs[i]]?.type === "brc") branches.push(allInputs[i]);
-      }
-
-      if (branches.length > 0) {
-        const index = Scratch.Cast.toNumber(args.INDEX) - 1;
-        const realProcBlock = thread.blockContainer.getBlock(procBlock.id);
-        const branch = realProcBlock.inputs[branches[index]]?.block;
-        if (branch) util.thread.pushStack(branch);
-      }
     }
 
     // Storage set/get

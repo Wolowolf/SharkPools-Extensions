@@ -103,15 +103,6 @@
             },
           },
           /* Deprecation Marker */
-          {
-            opcode: "saveRecording2",
-            blockType: Scratch.BlockType.COMMAND,
-            hideFromPalette: true,
-            text: Scratch.translate("download recording named [NAME]"),
-            arguments: {
-              NAME: { type: Scratch.ArgumentType.STRING },
-            },
-          },
           /* Marker End */
         ],
         menus: {
@@ -296,14 +287,6 @@
     }
 
     /* Deprecation Marker */
-    async saveRecording2(args) {
-      if (this.recording) {
-        Scratch.download(
-          await this.blob2Base64(this.recording),
-          `${Scratch.Cast.toString(args.NAME)}.wav`
-        );
-      }
-    }
     /* Marker End */
   }
 

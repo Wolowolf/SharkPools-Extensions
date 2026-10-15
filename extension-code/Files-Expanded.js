@@ -441,25 +441,6 @@
             text: Scratch.translate("Uploading"),
           },
           {
-            opcode: "showPicker",
-            blockType: Scratch.BlockType.REPORTER,
-            text: Scratch.translate("open a file"),
-            disableMonitor: true,
-            hideFromPalette: true,
-          },
-          {
-            opcode: "showPickerExtensions",
-            blockType: Scratch.BlockType.REPORTER,
-            text: Scratch.translate("open a [extension] file"),
-            hideFromPalette: true,
-            arguments: {
-              extension: {
-                type: Scratch.ArgumentType.STRING,
-                defaultValue: ".txt",
-              },
-            },
-          },
-          {
             opcode: "showPickerAs",
             blockType: Scratch.BlockType.REPORTER,
             text: Scratch.translate("open a file as [as]"),
@@ -749,13 +730,6 @@
             },
           },
           /* Deprecation Marker */
-          {
-            opcode: "scaleImage",
-            blockType: Scratch.BlockType.COMMAND,
-            text: "scale selector image to [SCALE]%",
-            hideFromPalette: true,
-            arguments: { SCALE: { type: Scratch.ArgumentType.NUMBER } }
-          },
           /* Marker End */
           {
             opcode: "borderTypeSet",
@@ -1086,13 +1060,7 @@
     }
 
     // Block Funcs (Upload & Download)
-    showPicker() {
-      return showFilePrompt("", AS_TEXT);
-    }
 
-    showPickerExtensions(args) {
-      return showFilePrompt(args.extension, AS_TEXT);
-    }
 
     showPickerAs(args) {
       return showFilePrompt("", args.as);
@@ -1343,7 +1311,6 @@
     }
 
     /* Deprecation Marker */
-    scaleImage() { /* deprecated */ }
     /* Marker End */
     imageSet(args) {
       Scratch.canFetch(encodeURI(args.IMG)).then((canFetch) => {

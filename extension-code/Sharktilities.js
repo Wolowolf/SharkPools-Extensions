@@ -239,118 +239,6 @@
             }
           },
           /* Deprecation Marker */
-          {
-            opcode: "costumeCnt", blockType: Scratch.BlockType.REPORTER,
-            text: "# of costumes in [SPRITE]", hideFromPalette: true,
-            arguments: { SPRITE: { type: Scratch.ArgumentType.STRING, menu: "TARGETS" } }
-          },
-          {
-            opcode: "roundToNearest", blockType: Scratch.BlockType.REPORTER,
-            text: "round [NUMBER] to nearest [ROUND_TYPE]", hideFromPalette: true,
-            arguments: { NUMBER: { type: Scratch.ArgumentType.NUMBER, defaultValue: 3.1415 }, ROUND_TYPE: { type: Scratch.ArgumentType.STRING, menu: "ROUND_MENU" } }
-          },
-          {
-            opcode: "randomLetter", blockType: Scratch.BlockType.REPORTER,
-            text: "pick random [LETTER_TYPE] letter", hideFromPalette: true,
-            arguments: { LETTER_TYPE: { type: Scratch.ArgumentType.STRING, menu: "LETTER_TYPE_MENU" } }
-          },
-          {
-            opcode: "randomCharRange", blockType: Scratch.BlockType.REPORTER,
-            text: "pick random character [ONE] to [TWO]", hideFromPalette: true,
-            arguments: { ONE: { type: Scratch.ArgumentType.STRING, defaultValue: "a" }, TWO: { type: Scratch.ArgumentType.STRING, defaultValue: "c" } }
-          },
-          {
-            opcode: "tripleOperator", blockType: Scratch.BlockType.REPORTER,
-            text: "[NUM1] [OPERATOR1] [NUM2] [OPERATOR2] [NUM3]", hideFromPalette: true,
-            arguments: {
-              NUM1: { type: Scratch.ArgumentType.NUMBER, defaultValue: 0 }, OPERATOR1: { type: Scratch.ArgumentType.STRING, menu: "OPERATOR_MENU" },
-              NUM2: { type: Scratch.ArgumentType.NUMBER, defaultValue: 0 }, OPERATOR2: { type: Scratch.ArgumentType.STRING, menu: "OPERATOR_MENU" }, NUM3: { type: Scratch.ArgumentType.NUMBER, defaultValue: 0 }
-            }
-          },
-          {
-            opcode: "quadrupleOperator", blockType: Scratch.BlockType.REPORTER, hideFromPalette: true,
-            text: "[NUM1] [OPERATOR1] [NUM2] [OPERATOR2] [NUM3] [OPERATOR3] [NUM4]",
-            arguments: {
-              NUM1: { type: Scratch.ArgumentType.NUMBER, defaultValue: 0 }, OPERATOR1: { type: Scratch.ArgumentType.STRING, menu: "OPERATOR_MENU" },
-              NUM2: { type: Scratch.ArgumentType.NUMBER, defaultValue: 0 }, OPERATOR2: { type: Scratch.ArgumentType.STRING, menu: "OPERATOR_MENU" },
-              NUM3: { type: Scratch.ArgumentType.NUMBER, defaultValue: 0 }, OPERATOR3: { type: Scratch.ArgumentType.STRING, menu: "OPERATOR_MENU" }, NUM4: { type: Scratch.ArgumentType.NUMBER, defaultValue: 0 }
-            }
-          },
-          {
-            opcode: "negaAbs", blockType: Scratch.BlockType.REPORTER,
-            text: "nega-abs of [NUMBER]", hideFromPalette: true,
-            arguments: { NUMBER: { type: Scratch.ArgumentType.NUMBER, defaultValue: 0 } }
-          },
-          {
-            opcode: "rndString", blockType: Scratch.BlockType.REPORTER, hideFromPalette: true,
-            text: "pick random [STRING1] or [STRING2] with [CHANCE]% chance",
-            arguments: { STRING1: { type: Scratch.ArgumentType.STRING, defaultValue: "foo" }, STRING2: { type: Scratch.ArgumentType.STRING, defaultValue: "bar" }, CHANCE: { type: Scratch.ArgumentType.NUMBER, defaultValue: 50 } }
-          },
-          {
-            opcode: "noContain", blockType: Scratch.BlockType.BOOLEAN,
-            text: "[STRING1] not contains [STRING2]?", hideFromPalette: true,
-            arguments: { STRING1: { type: Scratch.ArgumentType.STRING, defaultValue: "SharkPool" }, STRING2: { type: Scratch.ArgumentType.STRING, defaultValue: "shark" } }
-          },
-          {
-            opcode: "replaceKey",
-            blockType: Scratch.BlockType.REPORTER, hideFromPalette: true,
-            text: "replace [KEY] #[ORDER] of [STRING] with [REPLACE]",
-            arguments: {
-              STRING: { type: Scratch.ArgumentType.STRING, defaultValue: "SharkPool is cool. SharkPool is great." },
-              KEY: { type: Scratch.ArgumentType.STRING, defaultValue: "is" },
-              ORDER: { type: Scratch.ArgumentType.NUMBER, defaultValue: 2 },
-              REPLACE: { type: Scratch.ArgumentType.STRING, defaultValue: "isnt" }
-            }
-          },
-          {
-            opcode: "replaceKeys",
-            blockType: Scratch.BlockType.REPORTER, hideFromPalette: true,
-            text: "replace [KEY] #[ORDER] to #[ORDER2] of [STRING] with [REPLACE]",
-            arguments: {
-              STRING: { type: Scratch.ArgumentType.STRING, defaultValue: "SharkPool is cool. SharkPool is great." },
-              KEY: { type: Scratch.ArgumentType.STRING, defaultValue: "is" },
-              ORDER: { type: Scratch.ArgumentType.NUMBER, defaultValue: 1 },
-              ORDER2: { type: Scratch.ArgumentType.NUMBER, defaultValue: 2 },
-              REPLACE: { type: Scratch.ArgumentType.STRING, defaultValue: "isnt" }
-            }
-          },
-          {
-            opcode: "tripleJoin", blockType: Scratch.BlockType.REPORTER,
-            text: "join [STRING1] [STRING2] [STRING3]", hideFromPalette: true,
-            arguments: { STRING1: { type: Scratch.ArgumentType.STRING }, STRING2: { type: Scratch.ArgumentType.STRING }, STRING3: { type: Scratch.ArgumentType.STRING } }
-          },
-          {
-            opcode: "quadrupleJoin", blockType: Scratch.BlockType.REPORTER,
-            text: "join [STRING1] [STRING2] [STRING3] [STRING4]", hideFromPalette: true,
-            arguments: { STRING1: { type: Scratch.ArgumentType.STRING }, STRING2: { type: Scratch.ArgumentType.STRING }, STRING3: { type: Scratch.ArgumentType.STRING }, STRING4: { type: Scratch.ArgumentType.STRING } }
-          },
-          {
-            opcode: "fiveJoin", blockType: Scratch.BlockType.REPORTER, hideFromPalette: true,
-            text: "join [STRING1] [STRING2] [STRING3] [STRING4] [STRING5]",
-            arguments: {
-              STRING1: { type: Scratch.ArgumentType.STRING }, STRING2: { type: Scratch.ArgumentType.STRING }, STRING3: { type: Scratch.ArgumentType.STRING },
-              STRING4: { type: Scratch.ArgumentType.STRING }, STRING5: { type: Scratch.ArgumentType.STRING }
-            }
-          },
-          {
-            opcode: "simplifyFrac",
-            blockType: Scratch.BlockType.REPORTER, hideFromPalette: true,
-            text: "simplify fraction [NUM] / [DENOM]",
-            arguments: {
-              NUM: { type: Scratch.ArgumentType.NUMBER, defaultValue: 4 },
-              DENOM: { type: Scratch.ArgumentType.NUMBER, defaultValue: 8 }
-            }
-          },
-          {
-            opcode: "repeatForUntil", text: "repeat [NUM] or until [CON]",
-            blockType: Scratch.BlockType.LOOP, hideFromPalette: true,
-            arguments: { NUM: { type: Scratch.ArgumentType.STRING, defaultValue: 10 }, CON: { type: Scratch.ArgumentType.BOOLEAN } }
-          },
-          {
-            opcode: "spayedCondition", blockType: Scratch.BlockType.LOOP,
-            text: ["if [CON1] start loop", "repeat until [CON2]"], hideFromPalette: true,
-            arguments: { CON1: { type: Scratch.ArgumentType.BOOLEAN }, CON2: { type: Scratch.ArgumentType.BOOLEAN } }
-          }
           /* Marker End */
         ],
         menus: {
@@ -507,7 +395,6 @@
       });
     }
 
-    costumeCnt(args) { return this.costumeInfo({ SPRITE : args.SPRITE, OVERRIDE : true}) }
     costumeInfo(args, util) {
       let target = args.SPRITE;
       target = target === "_myself_" ? util.target : target === "_stage_" ? runtime.getTargetForStage() : runtime.getSpriteTargetByName(target);
@@ -640,24 +527,8 @@
 
     /* Deprecation Marker */
     // Found in More Operators
-    replaceKey(r){let t=RegExp(r.KEY,"g"),e=0;return Scratch.Cast.toString(r.STRING).replace(t,t=>++e===Scratch.Cast.toNumber(r.ORDER)?r.REPLACE:t)}
-    replaceKeys(r){let t=RegExp(r.KEY,"g"),e=0,n=Scratch.Cast.toNumber(r.ORDER),a=Scratch.Cast.toNumber(r.ORDER2),o=n>a?n:a;return Scratch.Cast.toString(r.STRING).replace(t,t=>++e>=n&&e<=o?r.REPLACE:t)}
-    randomCharRange(r){let t=r.ONE.charCodeAt(0);return String.fromCharCode(Math.floor(Math.random()*(r.TWO.charCodeAt(0)-t+1)+t))}
-    noContain(r){return!runtime.ext_scratch3_operators.contains(r)}
-    tripleJoin({STRING1:r,STRING2:t,STRING3:e}){return`${r}${t}${e}`}
-    quadrupleJoin({STRING1:r,STRING2:t,STRING3:e,STRING4:n}){return`${r}${t}${e}${n}`}
-    fiveJoin({STRING1:r,STRING2:t,STRING3:e,STRING4:n,STRING5:a}){return`${r}${t}${e}${n}${a}`}
-    tripleOperator(args){let nums=[Scratch.Cast.toNumber(args.NUM1),Scratch.Cast.toNumber(args.NUM2),Scratch.Cast.toNumber(args.NUM3)];return eval(`${nums[0]} ${args.OPERATOR1} ${nums[1]} ${args.OPERATOR2} ${nums[2]}`)}
-    quadrupleOperator(args){let nums=[Scratch.Cast.toNumber(args.NUM1),Scratch.Cast.toNumber(args.NUM2),Scratch.Cast.toNumber(args.NUM3),Scratch.Cast.toNumber(args.NUM4)];return eval(`${nums[0]} ${args.OPERATOR1} ${nums[1]} ${args.OPERATOR2} ${nums[2]} ${args.OPERATOR3} ${nums[3]}`)}
-    simplifyFrac(r){let t=Scratch.Cast.toNumber(r.NUM),e=Scratch.Cast.toNumber(r.DENOM),n=(r,t)=>t?n(t,r%t):r,a=n(t,e),o=JSON.stringify([t/a,e/a]);return o.includes("null")?"[undefined]":o}
-    negaAbs({NUMBER:r}){return-Math.abs(Scratch.Cast.toNumber(r))}
-    roundToNearest({NUMBER:r,ROUND_TYPE:t}){let e={"whole number":0,tenths:1,hundredths:2,thousandths:3}[t]||Math.max(0,Math.round(Scratch.Cast.toNumber(t))),n=Math.pow(10,e);return Math.round(r*n)/n}
-    randomLetter({LETTER_TYPE:r}){let t="abcdefghijklmnopqrstuvwxyz";return"uppercase"===r&&(t=t.toUpperCase()),t.charAt(Math.floor(Math.random()*t.length))}
-    rndString(r){return Math.random()>r.CHANCE/100?r.STRING2:r.STRING1}
     typeString(r){return"||"===r.TYPE?r.STRING1||r.STRING2:"undefined"===r.STRING1||"null"===r.STRING1?r.STRING2:r.STRING1}
     // Found in Extra Control
-    repeatForUntil(a,t){void 0===t.stackFrame.loopCounter&&(t.stackFrame.loopCounter=Math.round(Scratch.Cast.toNumber(a.NUM))),t.stackFrame.loopCounter--,!Scratch.Cast.toBoolean(a.CON)&&t.stackFrame.loopCounter>=0&&t.startBranch(1,!0)}
-    spayedCondition(a,t){if(void 0===t.stackFrame.index&&(t.stackFrame.index=!0),Scratch.Cast.toBoolean(a.CON1)||!t.stackFrame.index){if(Scratch.Cast.toBoolean(a.CON2)){t.stackFrame.index=!0;return}t.stackFrame.index=!1,t.startBranch(1,!0)}}
     /* Marker End */
   }
 
