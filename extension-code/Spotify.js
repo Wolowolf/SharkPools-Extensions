@@ -84,8 +84,8 @@
       this.gainNode = this.audioNode.context.createGain();
       this.gainNode.gain.value = 1;
       this.gainNode.connect(this.audioNode);
-      runtime.on("PROJECT_STOP_ALL", this.stopAll);
-      runtime.on("RUNTIME_DISPOSED", SpotifyCache.clear);
+      runtime.on("PROJECT_STOP_ALL", () => this.stopAll());
+      runtime.on("RUNTIME_DISPOSED", () => SpotifyCache.clear());
 
       this.playerInstances = [];
     }
@@ -505,12 +505,11 @@
     }
 
     stopAll() {
-      for (let i = this.playerInstances.length - 1; i >= 0; i--) {
-        try {
-          this.playerInstances[i].disconnect(this.gainNode);
-          this.playerInstances.pop();
-        } catch {}
+      for (const node of this.playerInstances) {
+        try { node.stop(); } catch {}
+        try { node.disconnect(); } catch {}
       }
+      this.playerInstances = [];
     }
 
     async getArtistAtt(args) {
