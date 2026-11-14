@@ -136,14 +136,6 @@
       "tags": ["Utility", "Graphics", "Math"],
       "date": "Last Updated: 11/08/2025"
     },
-    "Messages-Plus": {
-      "desc": "Powerful Message Blocks that work with Vanilla Broadcasts",
-      "creator": "SharkPool",
-      "url": "Messages-Plus.js",
-      "banner": "Messages-Plus.svg",
-      "tags": ["Utility", "Data Management", "Category Expansion", "Runtime"],
-      "date": "Last Updated: 07/12/2026"
-    },
     "Geolocation": {
       "desc": "Get users' Location and calculate Real-World Distances",
       "creator": "SharkPool",
