@@ -25,8 +25,8 @@
       "date": "Last Updated: 08/08/2025"
     },
     "Keys-Plus-V2": {
-      "desc": "Powerful and flexible Key detection Blocks with some additional features (No longer maintained)",
-      "creator": "StackOverflow",
+      "desc": "Powerful and flexible Key detection Blocks with some additional features, and simulated key presses and mouse clicks (No longer maintained)",
+      "creator": "StackOverflow, CubesterYT",
       "url": "KeysPlusV2.js",
       "banner": "Keys-Plus-V2.svg",
       "tags": ["Utility", "Data Management", "Hardware"],
@@ -39,14 +39,6 @@
       "banner": "Popup-Phoenix.svg",
       "tags": ["Configuration", "Graphics"],
       "date": "Last Updated: 08/16/2026"
-    },
-    "Camera-Sensing-Plus": {
-      "desc": "Expansion of the 'Video Sensing' extension. Display the Camera on Sprites and take Photos",
-      "creator": "SharkPool",
-      "url": "Camera-Sensing-Plus.js",
-      "banner": "Camera-Sensing-Plus.svg",
-      "tags": ["Utility", "Graphics", "Hardware", "Category Expansion"],
-      "date": "Last Updated: 04/10/2025"
     },
     "Particle-Engine": {
       "desc": "Create customizable and powerful Particle Engines with NO Clones",
@@ -112,9 +104,9 @@
       "tags": ["Utility", "Data Management"],
       "date": "Last Updated: 01/07/2026"
     },
-    "Variables-Expanded": {
-      "desc": "New Variable Blocks and new Variable Monitors",
-      "creator": "SharkPool, DogeIsCut",
+    "Variables-and-Lists": {
+      "desc": "Variable and List blocks by name, and new Variable Monitors",
+      "creator": "SharkPool, DogeIsCut, qxsck, LilyMakesThings",
       "url": "Variables-Expanded.js",
       "banner": "Variables-Expanded.svg",
       "tags": ["Utility", "Data Management", "Category Expansion"],
