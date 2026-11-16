@@ -184,14 +184,6 @@
       "tags": ["Utility", "Category Expansion", "Runtime"],
       "date": "Last Updated: 05/04/2025"
     },
-    "SVG-Spritesheets": {
-      "desc": "Create and Export SVG Spritesheets",
-      "creator": "SharkPool",
-      "url": "SVG-Spritesheets.js",
-      "banner": "SVG-Spritesheets.svg",
-      "tags": ["Utility", "Graphics", "Data Management"],
-      "date": "Last Updated: 12/20/2024"
-    },
     "GIF-Manager": {
       "desc": "Create and Split GIF Frames",
       "creator": "SharkPool",
