@@ -22,8 +22,7 @@
   const defaultBlock = {
     opcode: "body...", text: "...",
     disableMonitor: true,
-    blockType: Scratch.BlockType.REPORTER,
-    blockShape: isPM ? Scratch.BlockShape.OCTAGONAL : Scratch.BlockShape.ROUND
+    blockType: Scratch.BlockType.REPORTER
   };
 
   const BODY_TYPES = [
@@ -612,8 +611,8 @@
             hideFromPalette: hideBlocks,
             text: Scratch.translate("is [OCT_SHAPE1] touching [OCT_SHAPE2] ?"),
             arguments: {
-              OCT_SHAPE1: { shape: Scratch.BlockShape.OCTAGONAL },
-              OCT_SHAPE2: { shape: Scratch.BlockShape.OCTAGONAL }
+              OCT_SHAPE1: {},
+              OCT_SHAPE2: {}
             }
           },
           {
@@ -622,7 +621,7 @@
             hideFromPalette: hideBlocks,
             text: Scratch.translate("is [OCT_SHAPE] touching x: [x] y: [y] ?"),
             arguments: {
-              OCT_SHAPE: { shape: Scratch.BlockShape.OCTAGONAL },
+              OCT_SHAPE: {},
               x: { type: Scratch.ArgumentType.NUMBER },
               y: { type: Scratch.ArgumentType.NUMBER }
             }
@@ -633,8 +632,8 @@
             hideFromPalette: hideBlocks,
             text: Scratch.translate("distance from [OCT_SHAPE1] to [OCT_SHAPE2]"),
             arguments: {
-              OCT_SHAPE1: { shape: Scratch.BlockShape.OCTAGONAL },
-              OCT_SHAPE2: { shape: Scratch.BlockShape.OCTAGONAL }
+              OCT_SHAPE1: {},
+              OCT_SHAPE2: {}
             }
           },
           {
@@ -643,7 +642,7 @@
             hideFromPalette: hideBlocks,
             text: Scratch.translate("bounding box of [OCT_SHAPE]"),
             arguments: {
-              OCT_SHAPE: { shape: Scratch.BlockShape.OCTAGONAL }
+              OCT_SHAPE: {}
             }
           },
           "---",
@@ -653,11 +652,10 @@
             hideFromPalette: hideBlocks,
             text: Scratch.translate("set body type of [OCT_SHAPE] to [OCT_SHAPES]"),
             arguments: {
-              OCT_SHAPE: { shape: Scratch.BlockShape.OCTAGONAL },
+              OCT_SHAPE: {},
               OCT_SHAPES: {
                 type: Scratch.ArgumentType.STRING,
-                menu: "BODY_SHAPES",
-                shape: Scratch.BlockShape.OCTAGONAL
+                menu: "BODY_SHAPES"
               }
             }
           },
@@ -667,7 +665,7 @@
             hideFromPalette: hideBlocks,
             text: Scratch.translate("set sides of polygon body [OCT_SHAPE] to [VALUE]"),
             arguments: {
-              OCT_SHAPE: { shape: Scratch.BlockShape.OCTAGONAL },
+              OCT_SHAPE: {},
               VALUE: { type: Scratch.ArgumentType.NUMBER, defaultValue: 8 }
             }
           },
@@ -678,7 +676,7 @@
             hideFromPalette: hideBlocks,
             text: Scratch.translate("set position of [OCT_SHAPE] to x: [x] y: [y]"),
             arguments: {
-              OCT_SHAPE: { shape: Scratch.BlockShape.OCTAGONAL },
+              OCT_SHAPE: {},
               x: { type: Scratch.ArgumentType.NUMBER },
               y: { type: Scratch.ArgumentType.NUMBER }
             }
@@ -689,7 +687,7 @@
             hideFromPalette: hideBlocks,
             text: Scratch.translate("set direction of [OCT_SHAPE] to [ANGLE]"),
             arguments: {
-              OCT_SHAPE: { shape: Scratch.BlockShape.OCTAGONAL },
+              OCT_SHAPE: {},
               ANGLE: { type: Scratch.ArgumentType.ANGLE, defaultValue: 90 }
             }
           },
@@ -699,7 +697,7 @@
             hideFromPalette: hideBlocks,
             text: Scratch.translate("set scale of [OCT_SHAPE] to x: [x] y: [y]"),
             arguments: {
-              OCT_SHAPE: { shape: Scratch.BlockShape.OCTAGONAL },
+              OCT_SHAPE: {},
               x: { type: Scratch.ArgumentType.NUMBER, defaultValue: 100 },
               y: { type: Scratch.ArgumentType.NUMBER, defaultValue: 100 }
             }
@@ -711,14 +709,13 @@
             hideFromPalette: hideBlocks,
             text: Scratch.translate("toggle monitor of [OCT_SHAPE] to [TOGGLE]"),
             arguments: {
-              OCT_SHAPE: { shape: Scratch.BlockShape.OCTAGONAL },
+              OCT_SHAPE: {},
               TOGGLE: { type: Scratch.ArgumentType.STRING, menu: "TOGGLER" }
             }
           },
           {
             opcode: "bodyTemporary",
             blockType: Scratch.BlockType.REPORTER,
-            blockShape: isPM ? Scratch.BlockShape.OCTAGONAL : Scratch.BlockShape.ROUND,
             hideFromPalette: hideBlocks,
             text: Scratch.translate(
               "temporary [OCT_SHAPES] body at x: [x] y: [y] direction [ANGLE] scale x: [sX] y: [sY]"
@@ -726,8 +723,7 @@
             arguments: {
               OCT_SHAPES: {
                 type: Scratch.ArgumentType.STRING,
-                menu: "BODY_SHAPES",
-                shape: Scratch.BlockShape.OCTAGONAL
+                menu: "BODY_SHAPES"
               },
               x: { type: Scratch.ArgumentType.NUMBER },
               y: { type: Scratch.ArgumentType.NUMBER },
